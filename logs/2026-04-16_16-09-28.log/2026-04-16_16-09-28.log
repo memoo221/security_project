@@ -1,0 +1,3 @@
+[2026-04-16 16:10:02,271] root - INFO - Data has been read from database: NetworkSecurity and collection: NetworkData
+[2026-04-16 16:10:02,335] root - INFO - Data has been split into train and test sets with test size ratio: 0.2
+[2026-04-16 16:10:02,335] root - INFO - exiting the split_data_as_train_test method of DataIngestion class
