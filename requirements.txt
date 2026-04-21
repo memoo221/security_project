@@ -7,4 +7,6 @@ matplotlib
 seaborn
 certifi
 pymongo[srv]
+PyYAML
+
 

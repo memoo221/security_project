@@ -16,16 +16,19 @@ mongo_uri = os.getenv("MONGO_URI")
 class DataIngestion:
     def __init__(self, data_ingestion_config:DataIngestionConfig):
       try:
+         logging.info(f"Data Ingestion component initialized with config: {data_ingestion_config}")
          self.data_ingestion_config = data_ingestion_config
       except Exception as e:
             raise networkSecurityException(e, sys)
       
     def extract_collection_as_dataframe(self):
         try:
+            logging.info(f"Connecting to MongoDB using URI: {mongo_uri}")
             data_base_name = self.data_ingestion_config.database_name
             collection_name = self.data_ingestion_config.collection_name
             self.mongoclient = MongoClient(mongo_uri)
             collection= self.mongoclient[data_base_name][collection_name]
+            logging.info(f"Successfully connected to database: {data_base_name} and collection: {collection_name}")
             df = pd.DataFrame(list(collection.find()))
             if "_id" in df.columns.to_list():
                 df.drop(columns=["_id"], inplace=True)
@@ -42,6 +45,7 @@ class DataIngestion:
             dir_path=os.path.dirname(FILE_path)
             os.makedirs(dir_path, exist_ok=True)
             dataframe.to_csv(FILE_path, index=False, header=True)
+            logging.info(f"Data has been exported to feature store at path: {FILE_path}")
             return dataframe
         except Exception as e:
             raise networkSecurityException(e, sys)
@@ -58,6 +62,7 @@ class DataIngestion:
             os.makedirs(dir_path, exist_ok=True)
             train_set.to_csv(train_file_path, index=False, header=True)
             test_set.to_csv(test_file_path, index=False, header=True)
+            logging.info(f"Train and test data have been exported to paths: {train_file_path}, {test_file_path}")
         except Exception as e:
             raise networkSecurityException(e, sys)
         

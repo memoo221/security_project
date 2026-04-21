@@ -1,0 +1,6 @@
+[2026-04-21 17:25:11,573] root - INFO - training pipeline started
+[2026-04-21 17:25:11,573] root - INFO - Training Pipeline Config initialized with timestamp: 2026-04-21 17:25:07.973490
+[2026-04-21 17:25:11,573] root - INFO - Data Ingestion Config initialized with training pipeline config: <networksecurity.entity.config_entity.trainingPipelineConfig object at 0x000001CAA7EF9B90>
+[2026-04-21 17:25:11,573] root - INFO - Data Ingestion component initialized with config: <networksecurity.entity.config_entity.DataIngestionConfig object at 0x000001CAB6FC34D0>
+[2026-04-21 17:25:11,573] root - INFO - Connecting to MongoDB using URI: mongodb+srv://mohamedwael3346_db_user:mohamedwael12@cluster0.blmttww.mongodb.net/?appName=Cluster0
+[2026-04-21 17:25:11,862] root - INFO - Successfully connected to database: NetworkSecurity and collection: NetworkData
