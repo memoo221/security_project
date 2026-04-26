@@ -62,4 +62,18 @@ class DataValidationConfig:
         )
 
 
-       
+class DataTransformationConfig:
+    def __init__(self,training_pipeline_config:trainingPipelineConfig):
+        logging.info(f"Data Transformation Config initialized with training pipeline config: {training_pipeline_config}")
+        self.data_transformation_dir:str=os.path.join(
+            training_pipeline_config.artifact_dir,trainingpipeline.DATA_TRANSFORMATION_DIR_NAME
+        )
+        self.transformed_train_file_path:str=os.path.join(
+            self.data_transformation_dir,trainingpipeline.DATA_TRANSFORMATION_TRANSFORMED_DIR,trainingpipeline.TRAIN_FILE_NAME.replace("csv","npy")
+        )
+        self.transformed_test_file_path:str=os.path.join(
+            self.data_transformation_dir,trainingpipeline.DATA_TRANSFORMATION_TRANSFORMED_DIR,trainingpipeline.TEST_FILE_NAME.replace("csv","npy")
+        )
+        self.preprocessor_object_file_path:str=os.path.join(
+            self.data_transformation_dir,trainingpipeline.DATA_TRANSFORMATION_TRANSFORMED_DIR,"preprocessor.pkl"
+        )

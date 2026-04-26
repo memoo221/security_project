@@ -1,0 +1,6 @@
+[2026-04-26 19:40:52,824] root - INFO - training pipeline started
+[2026-04-26 19:40:52,824] root - INFO - Training Pipeline Config initialized with timestamp: 2026-04-26 19:40:49.700890
+[2026-04-26 19:40:52,824] root - INFO - Data Ingestion Config initialized with training pipeline config: <networksecurity.entity.config_entity.trainingPipelineConfig object at 0x00000212E6DC5590>
+[2026-04-26 19:40:52,824] root - INFO - Data Ingestion component initialized with config: <networksecurity.entity.config_entity.DataIngestionConfig object at 0x000002128A7E7CD0>
+[2026-04-26 19:40:52,824] root - INFO - Connecting to MongoDB
+[2026-04-26 19:40:53,640] root - INFO - Successfully connected to database: NetworkSecurity and collection: NetworkData

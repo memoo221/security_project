@@ -23,7 +23,7 @@ class DataIngestion:
       
     def extract_collection_as_dataframe(self):
         try:
-            logging.info(f"Connecting to MongoDB using URI: {mongo_uri}")
+            logging.info("Connecting to MongoDB")
             data_base_name = self.data_ingestion_config.database_name
             collection_name = self.data_ingestion_config.collection_name
             self.mongoclient = MongoClient(mongo_uri)

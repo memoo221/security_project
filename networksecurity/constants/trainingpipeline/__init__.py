@@ -1,5 +1,7 @@
 import os
 
+import numpy as np
+
 TARGET_COLUMN: str = "Result"
 PIPELINE_NAME: str = "NetworkSecurityPipeline"
 ARTIFACT_DIR: str = "Artifacts"
@@ -32,3 +34,19 @@ DATA_VALIDATION_VALID_DIR: str = "validated"
 DATA_VALIDATION_INVALID_DIR: str = "invalid"
 DATA_VALIDATION_DRIFT_REPORT_DIR: str = "drift_report"
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "report.yaml"
+
+"""
+Data Transformation related constant start with DATA_TRANSFORMATION
+"""
+DATA_TRANSFORMATION_DIR_NAME: str = "data_transformation"
+DATA_TRANSFORMATION_TRANSFORMED_DIR: str = "transformed"
+"""
+USING KNN FOR IMPUTIG THE MISSING VALUES
+"""
+DATA_TRANSFORMATION_IMPUTER_PARAMS:dict={
+    "n_neighbors": 3,
+    "weights": "uniform",
+    "missing_values": np.nan
+
+}
+
